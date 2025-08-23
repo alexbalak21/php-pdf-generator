@@ -11,7 +11,7 @@ $options->setChroot(__DIR__);
 $dompdf = new Dompdf($options);
 
 
-$htmlContent = require_once 'page.php';
+$htmlContent = require_once 'example.php';
 
 
 $dompdf->loadHtml($htmlContent);

@@ -11,11 +11,7 @@ $options->setChroot(__DIR__);
 $dompdf = new Dompdf($options);
 
 
-ob_start(); ?>
-<h1>Sample PDF</h1>
-<img src="/img/logo_underline.png" alt="novocib logo">
-<p>This is a sample PDF generated from HTML content.</p>
-<?php $htmlContent = ob_get_clean();
+$htmlContent = require_once 'page.php';
 
 
 $dompdf->loadHtml($htmlContent);

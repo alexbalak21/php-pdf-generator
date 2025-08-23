@@ -7,33 +7,44 @@ ob_start(); ?>
         padding: 0;
     }
 
-    .header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 20px 40px;
+    .header-table {
+        width: 100%;
         border-bottom: 2px solid #000;
+        padding: 20px 40px;
+        border-collapse: collapse;
+    }
+
+    .logo-cell {
+        width: 50%;
+        vertical-align: middle;
+    }
+
+    .address-cell {
+        width: 50%;
+        text-align: right;
+        font-size: 12px;
+        line-height: 1.4;
+        vertical-align: middle;
     }
 
     .logo {
         height: 75px;
         width: auto;
     }
-
-    .address {
-        text-align: right;
-        font-size: 12px;
-        line-height: 1.4;
-    }
 </style>
 
-<div class="header">
-    <img class="logo" src="/img/logo_underline.png" alt="novocib logo">
-    <div class="address">
-        <strong>NOVOCIB</strong><br>
-        60 Avenue Rockefeller<br>
-        69008 Lyon, France<br>
-        contact@novocib.com
-    </div>
-</div>
+<table class="header-table">
+    <tr>
+        <td class="logo-cell">
+            <img class="logo" src="/img/logo_underline.png" alt="novocib logo">
+        </td>
+        <td class="address-cell">
+            <strong>NOVOCIB</strong><br>
+            60 Avenue Rockefeller<br>
+            69008 Lyon, France<br>
+            contact@novocib.com
+        </td>
+        <td> </td>
+    </tr>
+</table>
 <?php return ob_get_clean(); ?>

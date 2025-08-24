@@ -7,6 +7,10 @@ ob_start(); ?>
         padding: 0;
     }
 
+    @page {
+        margin: 1.5rem;
+    }
+
     header {
         position: relative;
     }
@@ -17,36 +21,75 @@ ob_start(); ?>
     }
 
     .address {
-
         position: absolute;
         text-align: center;
         font-size: 12px;
     }
 
     .title {
-        margin-top: 3rem;
         text-align: center;
         font-size: 14px;
     }
 
     .ref {
-        color: #3771C8
+        color: #3771C8;
+        font-weight: bold;
     }
 
     .name {
         font-weight: bold;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .client {
         position: absolute;
-        right: 0;
+        font-size: 15px;
+        top: 160;
+        right: 10;
         display: inline-block;
-        margin-top: 2.2rem;
         border: 1px solid #000;
         margin-left: auto;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding-left: 0.5rem;
+        padding-right: 5rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    main {
+        margin-top: 155px;
+    }
+
+    .features-title {
+        background-color: #b3c6e7;
+        display: inline-block;
+        padding: 4px 8px;
+        margin-bottom: 6px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    .features-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        border: #000 1px solid;
+    }
+
+    .features-table td {
+        border: #000 1px solid;
+    }
+
+    .client-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        border: #000 1px solid;
+    }
+
+    .client-table td {
+        border: #000 1px solid;
     }
 </style>
 
@@ -74,15 +117,67 @@ ob_start(); ?>
             </p>
         </div>
         <div class="client">
-            <p>
+            <span>
                 <strong>SCAPMAREE</strong><br>
                 5 rue Marcelin Berthelot <br>
                 91320 WISSOUS Cedex <br>
                 A l'attention de M. Adrien CAGNA
-            </p>
-
+            </span>
         </div>
     </header>
+    <main>
+        <div>
+            <span class="features-title">Caractéristiques de l'échantillon</span>
+            <table class="features-table" cellpadding="8" cellspacing="0">
+                <tr>
+                    <td><strong>Date et lieu de prélèvement</strong></td>
+                    <td>COPROMER, 21/08/2023, 11h</td>
+                    <td><strong>Conditions de conservation à la réception :</strong></td>
+                    <td>0–2°C</td>
+                </tr>
+                <tr>
+                    <td><strong>Date, heure et T° à la réception au laboratoire :</strong></td>
+                    <td>21/08/2023, 11h20, 0°C</td>
+                    <td><strong>Date de mise en analyse :</strong></td>
+                    <td>21/08/2023, 16h</td>
+                </tr>
+            </table>
+        </div>
+        <div style="margin-top: 24px;">
+            <span class="features-title">Identification de l’échantillon (données fournis par le client)</span>
+            <table cellspacing="0" cellpadding="6" class="client-table" style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
+                <tr>
+                    <td><strong>Fournisseur/Fabricant :</strong></td>
+                    <td>NORDVIK</td>
+                    <td><strong>Nom de produit :</strong></td>
+                    <td>Dos de cabillaud</td>
+                </tr>
+                <tr>
+                    <td><strong>Conditionnement :</strong></td>
+                    <td>Vrac</td>
+                    <td><strong>Espèce :</strong></td>
+                    <td>Gadus morhua</td>
+                </tr>
+                <tr>
+                    <td><strong>Agrément :</strong></td>
+                    <td>IS A76 EFTA</td>
+                    <td><strong>Origine :</strong></td>
+                    <td>Iceland</td>
+                </tr>
+                <tr>
+                    <td><strong>Lot :</strong></td>
+                    <td>E-227</td>
+                    <td><strong>Date d'emballage :</strong></td>
+                    <td>Non indiqué</td>
+                </tr>
+                <tr>
+                    <td><strong>Type de pêche :</strong></td>
+                    <td colspan="3">Chalut/lignes</td>
+                </tr>
+            </table>
+        </div>
+
+    </main>
 
 </body>
 

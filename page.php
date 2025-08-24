@@ -91,6 +91,25 @@ ob_start(); ?>
     .client-table td {
         border: #000 1px solid;
     }
+
+    .results-title {
+        background-color: #b3c6e7;
+        display: inline-block;
+        padding: 4px 8px;
+        margin-bottom: 6px;
+    }
+
+    .results-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        border: #000 1px solid;
+    }
+
+    .results-table td,
+    th {
+        border: #000 1px solid;
+    }
 </style>
 
 <body>
@@ -143,7 +162,7 @@ ob_start(); ?>
                 </tr>
             </table>
         </div>
-        <div style="margin-top: 24px;">
+        <div style="margin-top: 16px;">
             <span class="features-title">Identification de l’échantillon (données fournis par le client)</span>
             <table cellspacing="0" cellpadding="6" class="client-table" style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
                 <tr>
@@ -176,7 +195,43 @@ ob_start(); ?>
                 </tr>
             </table>
         </div>
+        <div style="margin-top: 16px;">
+            <span class="results-title">Résultats des essais physico-chimiques</span>
+            <table class="results-table" cellpadding="6" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>N° Éch</th>
+                        <th>Lot | Date Fab. | DLC</th>
+                        <th>Essai (méthode)</th>
+                        <th>Résultat (incertitude)</th>
+                        <th>Unité</th>
+                        <th>Critère de non-conformité (qualité B)</th>
 
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>250820-1</td>
+                        <td>PRECICE® Nucleotides Assay Kit (NOVOCOB) lot NCN2833L5</td>
+                        <td>
+                            Méthode enzymatique colorimétrique de dosage de trois nucléotides :<br>
+                            IMP, Inosine et Hypoxanthine<br>
+                            AFNOR XP V45-077 (2025)
+                        </td>
+                        <td>
+                            IMP 11% (±2%)<br>
+                            Hypoxanthine 28% (±2%)
+                        </td>
+                        <td>Molar %</td>
+                        <td>
+                            IMP &gt; 9%<br>
+                            Hypoxanthine &lt; 40%
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
     </main>
 
 </body>

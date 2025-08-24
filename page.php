@@ -17,18 +17,36 @@ ob_start(); ?>
     }
 
     .address {
+
+        position: absolute;
         text-align: center;
         font-size: 12px;
     }
 
     .title {
+        margin-top: 3rem;
         text-align: center;
-        margin-top: 10px;
         font-size: 14px;
     }
 
     .ref {
         color: #3771C8
+    }
+
+    .name {
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+
+    .client {
+        position: absolute;
+        right: 0;
+        display: inline-block;
+        margin-top: 2.2rem;
+        border: 1px solid #000;
+        margin-left: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 </style>
 
@@ -53,6 +71,14 @@ ob_start(); ?>
             </p>
             <p class="name">
                 Dos de cabillaud
+            </p>
+        </div>
+        <div class="client">
+            <p>
+                <strong>SCAPMAREE</strong><br>
+                5 rue Marcelin Berthelot <br>
+                91320 WISSOUS Cedex <br>
+                A l'attention de M. Adrien CAGNA
             </p>
 
         </div>

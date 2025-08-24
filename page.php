@@ -110,6 +110,18 @@ ob_start(); ?>
     th {
         border: #000 1px solid;
     }
+
+    .validation-title {
+        font-weight: bold;
+        margin-top: 12px;
+    }
+
+    .validation {
+        margin-top: 30px;
+        padding-left: 1rem;
+        background-color: lightgray;
+
+    }
 </style>
 
 <body>
@@ -230,7 +242,9 @@ ob_start(); ?>
                     </tr>
                 </tbody>
             </table>
-
+        </div>
+        <div class="validation">
+            <p class="validation-title">VALIDATION</p>
         </div>
     </main>
 

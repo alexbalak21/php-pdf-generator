@@ -12,6 +12,7 @@ $dompdf = new Dompdf($options);
 
 
 $htmlContent = require_once 'page.php';
+$htmlContent = file_get_contents("pdf_templates/rapport_essais.php");
 
 
 $dompdf->loadHtml($htmlContent);

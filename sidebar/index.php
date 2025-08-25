@@ -12,7 +12,39 @@
 </head>
 
 <body>
-    <h1>Bootstrap Sidebar</h1>
+    <div class="wrapper">
+        <aside id="sidebar">
+            <div class="d-flex">
+                <button class="" type="button" id="toggle-btn"><i class="fa-solid fa-bars"></i></button>
+                <div class="sidebar-logo">
+                    <a href="#">Sidebar</a>
+                </div>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link"><i class=" fa-solid fa-user"></i><span>Profile</span></a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link"><i class="fa-solid fa-building"></i><span>Company</span></a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link"><i class="fa-solid fa-file-invoice"></i><span>Reports</span></a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link"><i class="fa-solid fa-file-invoice-dollar"></i><span>Invoices</span></a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link" data-bs-toggle="collapse" data-bs-target="#auth" aria-expanded="false" aria-controls="collapseOne"><i class="fa-solid fa-right-to-bracket"></i><span>Auth</span></a>
+                    <ul class="sidebar-dropdown list-unstyled collapse" id="auth">
+                        <li><a href="#" class="sidebar-link"><span>Login</span></a></li>
+                        <li><a href="#" class="sidebar-link"><span>Register</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+
+
+        </aside>
+    </div>
 
 
 </body>

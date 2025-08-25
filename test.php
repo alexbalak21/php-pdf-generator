@@ -17,7 +17,7 @@
                 <li><a href="#">Link 3</a></li>
             </ul>
         </aside>
-        <main id="main">
+        <main class="main">
             <h1>Main Content Area</h1>
             <p>This is the main content area.</p>
         </main>

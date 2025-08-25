@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <title>Bootstrap Example</title>
+    <title>Sidebar BS5</title>
 </head>
 
 <body>
-    <div class="wrapper">
-        <aside id="sidebar">
+    <div class="d-flex">
+        <aside>
             <div class="d-flex">
                 <button class="" type="button" id="toggle-btn"><i class="fa-solid fa-bars"></i></button>
                 <div class="sidebar-logo">
@@ -55,7 +56,7 @@
                         <li><a href="#" class="sidebar-link has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#level2"
                                 data-bs-parent="#multi" aria-expanded="false" aria-controls="level2">
                                 <i class="fa-solid fa-square-caret-down"></i>
-                                <span>Has Sub-links</span>
+                                <span>Sub-links</span>
                             </a>
                             <ul class="sidebar-dropdown list-unstyled collapse" id="level2">
                                 <li><a href="#" class="sidebar-link"><span>Sub-link 1</span></a></li>
@@ -72,7 +73,7 @@
                 </a>
             </div>
         </aside>
-        <main id="main" class="p-3">
+        <main class="p-3">
             <div class="container-fluid p-4">
                 <h2>Main Content Area</h2>
                 <p>This is the main content area. Click the toggle button to collapse or expand the sidebar.</p>

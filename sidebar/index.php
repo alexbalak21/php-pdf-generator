@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <title>Bootstrap Sidebar</title>
+    <title>Bootstrap Example</title>
 </head>
 
 <body>
@@ -34,19 +33,52 @@
                     <a href="#" class="sidebar-link"><i class="fa-solid fa-file-invoice-dollar"></i><span>Invoices</span></a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link" data-bs-toggle="collapse" data-bs-target="#auth" aria-expanded="false" aria-controls="collapseOne"><i class="fa-solid fa-right-to-bracket"></i><span>Auth</span></a>
-                    <ul class="sidebar-dropdown list-unstyled collapse" id="auth">
+                    <a href="#" class="sidebar-link has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#auth"
+                        aria-expanded="false" aria-controls="auth">
+                        <i class="fa-solid fa-square-caret-down"></i>
+                        <span>Dropdown</span>
+                    </a>
+                    <ul class="sidebar-dropdown list-unstyled collapse" id="auth" data-bs-parent="#sidebar">
                         <li><a href="#" class="sidebar-link"><span>Login</span></a></li>
                         <li><a href="#" class="sidebar-link"><span>Register</span></a></li>
                     </ul>
                 </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#multi"
+                        aria-expanded="false" aria-controls="multi">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <span>Multilevel</span>
+                    </a>
+                    <ul class="sidebar-dropdown list-unstyled collapse" id="multi" data-bs-parent="#sidebar">
+                        <li><a href="#" class="sidebar-link"><span>Link</span></a></li>
+                        <li><a href="#" class="sidebar-link"><span>Link</span></a></li>
+                        <li><a href="#" class="sidebar-link has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#level2"
+                                data-bs-parent="#multi" aria-expanded="false" aria-controls="level2">
+                                <i class="fa-solid fa-square-caret-down"></i>
+                                <span>Has Sub-links</span>
+                            </a>
+                            <ul class="sidebar-dropdown list-unstyled collapse" id="level2">
+                                <li><a href="#" class="sidebar-link"><span>Sub-link 1</span></a></li>
+                                <li><a href="#" class="sidebar-link"><span>Sub-link 2</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
             </ul>
-
-
+            <div class="sidebar-footer">
+                <a class="sidebar-link" href="#">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
         </aside>
+        <main id="main" class="p-3">
+            <div class="container-fluid p-4">
+                <h2>Main Content Area</h2>
+                <p>This is the main content area. Click the toggle button to collapse or expand the sidebar.</p>
+            </div>
+        </main>
     </div>
-
-
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 

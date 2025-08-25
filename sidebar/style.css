@@ -24,7 +24,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-main{
+main {
     min-height: 100vh;
     width: 100%;
     overflow: hidden;
@@ -32,7 +32,7 @@ main{
     background-color: aliceblue;
 }
 
-aside{
+aside {
     width: 70px;
     min-width: 70px;
     z-index: 1000;
@@ -49,10 +49,10 @@ aside.expand {
 }
 
 #toggle-btn {
-   background-color: transparent;
-   cursor: pointer;
-   border: none;
-   padding: 1rem 1.5rem;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    padding: 1rem 1.5rem;
 }
 
 #toggle-btn i {
@@ -61,86 +61,89 @@ aside.expand {
 }
 
 .sidebar-logo {
-   margin: auto 0;
+    margin: auto 0;
 }
 
-.sidebar-logo a{
+.sidebar-logo a {
     color: #fff;
     font-size: 1.15rem;
     font-weight: 600;
 }
 
 aside:not(.expand) .sidebar-logo,
-aside:not(.expand) a.sidebar-link span{
+aside:not(.expand) a.sidebar-link span {
     display: none;
 }
 
-.sidebar-nav{
+.sidebar-nav {
     padding: 2rem 0;
     flex: 1 1 auto;
 }
 
-a.sidebar-link{
-padding: .625rem 1.625rem;
-color: #fff;
-display: block;
-font-size: 0.9rem;
-white-space: nowrap;
-border-left: 3px solid transparent;
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #fff;
+    display: block;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
 }
 
-.sidebar-link i{
+.sidebar-link i {
     font-size: 1.1rem;
     margin-right: .75rem;
 }
 
-a.sidebar-link:hover{
+a.sidebar-link:hover {
     background-color: rgba(255, 255, 255, 0.1);
     border-left: 3px solid #3b7ddd;
 }
 
-.sidebar-item{
+.sidebar-item {
     position: relative;
 }
 
-aside:not(.expand) .sidebar-item .sidebar-dropdown{
+aside:not(.expand) .sidebar-item .sidebar-dropdown {
     position: absolute;
     top: 0;
     left: 70px;
     background-color: #0e2238;
     padding: 0;
     min-width: 15rem;
+    z-index: 1001;
+    display: none;
 }
 
-aside:not(.expand) .sidebar-item:hover .has-dropdown+.sidebar-dropdown{
+aside:not(.expand) .sidebar-item:hover .has-dropdown + .sidebar-dropdown,
+aside:not(.expand) .sidebar-item .sidebar-dropdown:hover {
     display: block;
     max-height: 15em;
     width: 100%;
     opacity: 1;
     transition: all 0.25s ease-in-out;
+}
 
-    & a span {
-        display: inline;
-        opacity: 1;
-        transition: all 0.25s ease-in-out;
-    }
+aside:not(.expand) .sidebar-item .sidebar-dropdown a span {
+    display: inline;
+    opacity: 1;
+    transition: all 0.25s ease-in-out;
+}
 
-    & li:has(> a.has-dropdown) {
-        position: relative;
-    }
+aside:not(.expand) .sidebar-item .sidebar-dropdown li {
+    position: relative;
+}
 
-   & .has-dropdown+.sidebar-dropdown {
-      display: none;
-   }
+aside:not(.expand) .sidebar-item .sidebar-dropdown li .has-dropdown + .sidebar-dropdown {
+    display: none;
+}
 
-   & .has-dropdown:hover+.sidebar-dropdown{
+aside:not(.expand) .sidebar-item .sidebar-dropdown li:hover > .has-dropdown + .sidebar-dropdown,
+aside:not(.expand) .sidebar-item .sidebar-dropdown li .sidebar-dropdown:hover {
     display: block;
     position: absolute;
     top: 0;
     left: 15rem;
-   }
-
-
-
-
+    background-color: #0e2238;
+    min-width: 15rem;
+    z-index: 1002;
 }

@@ -72,9 +72,7 @@ aside.expand {
 
 aside:not(.expand) .sidebar-logo,
 aside:not(.expand) a.sidebar-link span{
-    width: 0px;
-    opacity: 0;
-    transition: width 0.25s ease-in-out, opacity 0.25s ease-in-out;
+    display: none;
 }
 
 .sidebar-nav{
@@ -112,7 +110,6 @@ aside:not(.expand) .sidebar-item .sidebar-dropdown{
     background-color: #0e2238;
     padding: 0;
     min-width: 15rem;
-    display: none;
 }
 
 aside:not(.expand) .sidebar-item:hover .has-dropdown+.sidebar-dropdown{
@@ -121,6 +118,29 @@ aside:not(.expand) .sidebar-item:hover .has-dropdown+.sidebar-dropdown{
     width: 100%;
     opacity: 1;
     transition: all 0.25s ease-in-out;
+
+    & a span {
+        display: inline;
+        opacity: 1;
+        transition: all 0.25s ease-in-out;
+    }
+
+    & li:has(> a.has-dropdown) {
+        position: relative;
+    }
+
+   & .has-dropdown+.sidebar-dropdown {
+      display: none;
+   }
+
+   & .has-dropdown:hover+.sidebar-dropdown{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 15rem;
+   }
+
+
+
+
 }
-
-

@@ -53,8 +53,7 @@
                     <ul class="sidebar-dropdown list-unstyled collapse" id="multi" data-bs-parent="#sidebar">
                         <li><a href="#" class="sidebar-link"><span>Link</span></a></li>
                         <li><a href="#" class="sidebar-link"><span>Link</span></a></li>
-                        <li><a href="#" class="sidebar-link has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#level2"
-                                data-bs-parent="#multi" aria-expanded="false" aria-controls="level2">
+                        <li><a href="#" class="sidebar-link has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#level2" data-bs-parent="#multi" aria-expanded="false" aria-controls="level2">
                                 <i class="fa-solid fa-square-caret-down"></i>
                                 <span>Sub-links</span>
                             </a>

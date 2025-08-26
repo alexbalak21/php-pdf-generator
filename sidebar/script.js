@@ -11,8 +11,6 @@ toggleBtn.addEventListener('click', function () {
             const instance = bootstrap.Collapse.getInstance(submenu);
             if (instance) {
                 instance.hide();
-            } else {
-                new bootstrap.Collapse(submenu, { toggle: false }).hide();
             }
         });
     }

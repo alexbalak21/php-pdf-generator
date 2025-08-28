@@ -1,0 +1,6 @@
+### GET 
+http://localhost:8000/api/echantillon-analyses
+
+
+###GET
+http://localhost:8000/api/test

@@ -3,130 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Rapport d'Essai</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        @page {
-            margin: 1.5rem;
-        }
-
-        header {
-            position: relative;
-        }
-
-        .logo {
-            height: 65px;
-            width: auto;
-        }
-
-        .address {
-            position: absolute;
-            text-align: center;
-            font-size: 12px;
-        }
-
-        .title {
-            text-align: center;
-            font-size: 14px;
-        }
-
-        .ref {
-            color: #3771C8;
-            font-weight: bold;
-        }
-
-        .name {
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .client {
-            position: absolute;
-            font-size: 15px;
-            top: 160;
-            right: 10;
-            display: inline-block;
-            border: 1px solid #000;
-            margin-left: auto;
-            padding-left: 0.5rem;
-            padding-right: 5rem;
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-        }
-
-        main {
-            margin-top: 155px;
-        }
-
-        .features-title {
-            background-color: #b3c6e7;
-            display: inline-block;
-            padding: 4px 8px;
-            margin-bottom: 6px;
-        }
-
-        table {
-            font-size: 12px;
-        }
-
-        .features-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-family: Arial, sans-serif;
-            border: #000 1px solid;
-        }
-
-        .features-table td {
-            border: #000 1px solid;
-        }
-
-        .client-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-family: Arial, sans-serif;
-            border: #000 1px solid;
-        }
-
-        .client-table td {
-            border: #000 1px solid;
-        }
-
-        .results-title {
-            background-color: #b3c6e7;
-            display: inline-block;
-            padding: 4px 8px;
-            margin-bottom: 6px;
-        }
-
-        .results-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-family: Arial, sans-serif;
-            border: #000 1px solid;
-        }
-
-        .results-table td,
-        th {
-            border: #000 1px solid;
-        }
-
-        .validation-title {
-            font-weight: bold;
-            margin-top: 12px;
-        }
-
-        .validation {
-            margin-top: 30px;
-            padding-left: 1rem;
-            background-color: lightgray;
-
-        }
-    </style>
+    <title>Rapport d'Essai</title>²
 </head>
 
 <body>
@@ -253,5 +130,128 @@
         </div>
     </main>
 </body>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    @page {
+        margin: 1.5rem;
+    }
+
+    header {
+        position: relative;
+    }
+
+    .logo {
+        height: 65px;
+        width: auto;
+    }
+
+    .address {
+        position: absolute;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .ref {
+        color: #3771C8;
+        font-weight: bold;
+    }
+
+    .name {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .client {
+        position: absolute;
+        font-size: 15px;
+        top: 160;
+        right: 10;
+        display: inline-block;
+        border: 1px solid #000;
+        margin-left: auto;
+        padding-left: 0.5rem;
+        padding-right: 5rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    main {
+        margin-top: 155px;
+    }
+
+    .features-title {
+        background-color: #b3c6e7;
+        display: inline-block;
+        padding: 4px 8px;
+        margin-bottom: 6px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    .features-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        border: #000 1px solid;
+    }
+
+    .features-table td {
+        border: #000 1px solid;
+    }
+
+    .client-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        border: #000 1px solid;
+    }
+
+    .client-table td {
+        border: #000 1px solid;
+    }
+
+    .results-title {
+        background-color: #b3c6e7;
+        display: inline-block;
+        padding: 4px 8px;
+        margin-bottom: 6px;
+    }
+
+    .results-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        border: #000 1px solid;
+    }
+
+    .results-table td,
+    th {
+        border: #000 1px solid;
+    }
+
+    .validation-title {
+        font-weight: bold;
+        margin-top: 12px;
+    }
+
+    .validation {
+        margin-top: 30px;
+        padding-left: 1rem;
+        background-color: lightgray;
+
+    }
+</style>
 
 </html>

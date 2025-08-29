@@ -1,0 +1,61 @@
+/* Table Styling */
+table {
+  margin: 50px auto;
+  border-collapse: collapse;
+  width: 400px;
+  font-family: sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-width: 200px;
+  text-align: left;
+}
+
+td[contenteditable="true"] {
+  position: relative;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Autocomplete Dropdown */
+#autocomplete-list {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-top: none;
+  z-index: 99;
+  background-color: white;
+  max-height: 150px;
+  overflow-y: auto;
+  width: 200px;
+  font-family: sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#autocomplete-list div {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+#autocomplete-list div:last-child {
+  border-bottom: none;
+}
+
+#autocomplete-list div:hover {
+  background-color: #e9e9e9;
+}
+
+#autocomplete-list {
+  display: none;
+}
+

@@ -38,6 +38,9 @@ speciesInput.addEventListener('input', function () {
   });
 });
 
+
+
+
 // Hide dropdown when clicking outside
 document.addEventListener('click', function (e) {
   if (e.target !== speciesInput) {

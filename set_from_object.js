@@ -1,0 +1,1 @@
+const uniqueNomClients = [...new Set(data.map(item => item.nom_client))];

@@ -14,6 +14,9 @@ Sub Gen_rapport()
     Dim charIndex As Integer
     Dim userRow As Variant
     Dim reportCol As Integer
+    Dim headerName As String
+    Dim cellValue As Variant
+    Dim nameCol As Integer
 
     ' Ask user for the row number
     userRow = InputBox("Enter the row number to generate the report from:", "Select Data Row")
@@ -26,10 +29,10 @@ Sub Gen_rapport()
     ' Set worksheet
     Set ws = ThisWorkbook.Sheets("Feuil1")
 
-    ' Launch Word and open template
+    ' Launch Word and open template as new document
     Set wordApp = CreateObject("Word.Application")
     wordApp.Visible = True
-    Set wordDoc = wordApp.Documents.Open("D:\Rapports\repport_template.docx")
+    Set wordDoc = wordApp.Documents.Add(Template:="D:\Rapports\repport_template.docx", NewTemplate:=False, DocumentType:=0)
 
     ' Replace {today_date} placeholder
     With wordDoc.Content.Find
@@ -40,22 +43,34 @@ Sub Gen_rapport()
         .Execute Replace:=2
     End With
 
-    ' Replace {name} placeholder
+    ' Find the column labeled "Nom de produit"
+    nameCol = 0
+    For i = 1 To ws.Cells(1, ws.Columns.Count).End(xlToLeft).Column
+        If Trim(ws.Cells(1, i).Value) = "Nom de produit" Then
+            nameCol = i
+            Exit For
+        End If
+    Next i
+
+    If nameCol = 0 Then
+        MsgBox """Nom de produit"" column not found.", vbCritical
+        Exit Sub
+    End If
+
+    ' Replace {name} placeholder with value from "Nom de produit"
     With wordDoc.Content.Find
         .ClearFormatting
         .Replacement.ClearFormatting
         .Text = "{name}"
-        .Replacement.Text = Trim(ws.Cells(userRow, 11).Value)
+        .Replacement.Text = Trim(ws.Cells(userRow, nameCol).Value)
         .Execute Replace:=2
     End With
 
-    ' Loop through columns to replace placeholders
-    For i = 2 To 19
-        Dim headerName As String
+    ' Loop through all columns in row 1 to replace matching placeholders
+    For i = 1 To ws.Cells(1, ws.Columns.Count).End(xlToLeft).Column
         headerName = Trim(ws.Cells(1, i).Value)
 
         If headerName <> "" Then
-            Dim cellValue As Variant
             cellValue = ws.Cells(userRow, i).Value
 
             If IsDate(cellValue) Then

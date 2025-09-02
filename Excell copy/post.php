@@ -2,26 +2,31 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["input"])) {
     $input = $_POST["input"];
 
-    echo "<h2>Formatted HTML Output</h2>";
-    echo '<div style="border:1px solid #ccc; padding:10px; background:#f9f9f9;">';
-    echo $input;
-    echo '</div><br>';
-
-    echo "<h2>Cleaned & Beautified HTML</h2>";
+    // Clean unwanted attributes
     $attributes = ["style", "class", "align", "valign", "width", "height", "bgcolor", "cellspacing", "cellpadding", "border", "span"];
     $cleaned = deleteUnwantedAttributes($input, $attributes);
-    $formatted = formatHtml($cleaned);
-    echo '<pre>' . htmlspecialchars($formatted) . '</pre>';
 
-    echo "<h2>Extracted Table Data (JSON)</h2>";
-    $tableData = extractTableData($cleaned);
-    echo '<pre>' . json_encode($tableData, JSON_PRETTY_PRINT) . '</pre>';
+    // Extract table rows
+    $rows = extractTableData($cleaned);
+
+    // Convert to column-based associative array
+    $data = convertRowsToColumns($rows); // ✅ This is your final $data structure
+
+    // Display JSON for verification
+    echo "<h2>Column-Based JSON</h2>";
+    echo '<pre>' . json_encode($data, JSON_PRETTY_PRINT) . '</pre>';
+
+    // ✅ Example usage
+    echo "<h2>Accessing PHP \$data</h2>";
+    foreach ($data as $header => $values) {
+        echo "<strong>$header</strong>: " . implode(", ", $values) . "<br>";
+    }
 } else {
     echo "No input received.";
 }
 
 // 🔧 Remove unwanted attributes
-function deleteUnwantedAttributes($input, $attributes = ["style", "class", "align"])
+function deleteUnwantedAttributes($input, $attributes = [])
 {
     foreach ($attributes as $attribute) {
         $input = preg_replace('/\s*' . preg_quote($attribute) . '="[^"]*"/i', '', $input);
@@ -29,19 +34,7 @@ function deleteUnwantedAttributes($input, $attributes = ["style", "class", "alig
     return $input;
 }
 
-// 🎨 Beautify HTML using DOMDocument
-function formatHtml($html)
-{
-    $dom = new DOMDocument();
-    libxml_use_internal_errors(true);
-    $dom->preserveWhiteSpace = false;
-    $dom->formatOutput = true;
-    $dom->loadHTML($html);
-    libxml_clear_errors();
-    return $dom->saveHTML();
-}
-
-// 📊 Extract table data into array
+// 📊 Extract table rows
 function extractTableData($html)
 {
     $dom = new DOMDocument();
@@ -62,4 +55,22 @@ function extractTableData($html)
         }
     }
     return $data;
+}
+
+// 🔄 Convert rows to columns
+function convertRowsToColumns($rows)
+{
+    $columns = [];
+    $numCols = count($rows[0]);
+
+    for ($i = 0; $i < $numCols; $i++) {
+        $header = $rows[0][$i] ?? "Column_$i";
+        $columns[$header] = [];
+
+        for ($j = 1; $j < count($rows); $j++) {
+            $columns[$header][] = $rows[$j][$i] ?? null;
+        }
+    }
+
+    return $columns;
 }

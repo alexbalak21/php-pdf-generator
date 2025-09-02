@@ -62,22 +62,41 @@ Sub Gen_rapport()
         End If
     Next i
 
-    ' Prompt user to select a folder
-    Set fileDialog = Application.fileDialog(msoFileDialogFolderPicker)
-    With fileDialog
-        .Title = "Select Folder to Save Report"
-        If .Show = -1 Then
-            folderPath = .SelectedItems(1)
-            savePath = folderPath & "\Rapport d'essai " & Trim(ws.Cells(lastRow, 1).Value) & ".docx"
-            wordDoc.SaveAs2 fileName:=savePath, FileFormat:=12 ' Save as .docx
-        Else
-            MsgBox "Save cancelled.", vbInformation
-        End If
-    End With
+' Prompt user to select a folder
+Set fileDialog = Application.fileDialog(msoFileDialogFolderPicker)
+With fileDialog
+    .Title = "Select Folder to Save Report"
+    .InitialFileName = Environ("USERPROFILE") & "\Documents" ' Start in user's Documents folder
+
+    If .Show = -1 Then
+        folderPath = .SelectedItems(1)
+
+        ' Sanitize filename
+        Dim rawName As String
+        Dim cleanName As String
+        Dim invalidChars As Variant
+        Dim charIndex As Integer
+
+        rawName = Trim(ws.Cells(lastRow, 1).Value)
+        cleanName = rawName
+        invalidChars = Array("\", "/", ":", "*", "?", """", "<", ">", "|")
+
+        For charIndex = LBound(invalidChars) To UBound(invalidChars)
+            cleanName = Replace(cleanName, invalidChars(charIndex), "_")
+        Next charIndex
+
+        savePath = folderPath & "\Rapport d'essai " & cleanName & ".docx"
+        wordDoc.SaveAs2 fileName:=savePath, FileFormat:=12 ' Save as .docx
+    Else
+        MsgBox "Save cancelled.", vbInformation
+    End If
+End With
+
 
     ' Clean up
     wordDoc.Close
     wordApp.Quit
 
 End Sub
+
 
